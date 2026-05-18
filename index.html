@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <title>මගේ වෙසක් තොරණ</title>
+    <style>
+
+body { margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #000; overflow: hidden; font-family: sans-serif;}
+#thorana { width: 1920px; height: 1216px; background: #050505; position: relative; border: 4px solid #ff9800; box-shadow: 0 0 50px rgba(255,152,0,0.4); }
+.light, .panel, .thorana-img, .matrix-container { position: absolute; box-sizing: border-box; }
+.matrix-container { border: none; }
+.panel { display: flex; align-items: center; justify-content: center; font-weight: bold; text-align: center; border: 2px solid #fff; overflow: hidden; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+.thorana-img { object-fit: fill; border: none; }
+
+@keyframes blink { 0% { opacity: 0.2; filter: brightness(0.6); } 100% { opacity: 1; filter: brightness(1.8); } }
+@keyframes pulse { 0% { transform: scale(0.85); } 100% { transform: scale(1.15); filter: brightness(1.5); } }
+@keyframes chase { 0% { opacity: 0.1; } 50% { opacity: 1; } 100% { opacity: 0.1; } }
+
+#audio-panel { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 30px; border: 1px solid #ff9800; color: #fff; text-align: center; z-index: 1000;}
+
+    </style>
+</head>
+<body>
+    <div id="thorana">
+        <div id="el_177910683758155186" class="matrix-container" style="left:760px; top:20px; width:400px; height:400px; z-index:1; "><canvas width="400" height="400" style="width:100%;height:100%;"></canvas></div>
+        <img class="thorana-img" src="images/img_8.png" style="left:744px; top:144px; width:430px; height:576px; z-index:2; ">
+        <div id="el_177910718272837150" class="matrix-container" style="left:300px; top:60px; width:500px; height:500px; z-index:3; "><canvas width="500" height="500" style="width:100%;height:100%;"></canvas></div>
+        <div id="el_177910724767538971" class="matrix-container" style="left:1120px; top:60px; width:500px; height:500px; z-index:3; "><canvas width="500" height="500" style="width:100%;height:100%;"></canvas></div>
+        <div id="el_177910727201542539" class="matrix-container" style="left:40px; top:320px; width:500px; height:500px; z-index:3; "><canvas width="500" height="500" style="width:100%;height:100%;"></canvas></div>
+        <div id="el_177910728860219790" class="matrix-container" style="left:1380px; top:320px; width:500px; height:500px; z-index:3; "><canvas width="500" height="500" style="width:100%;height:100%;"></canvas></div>
+        <div id="el_177910730517898656" class="matrix-container" style="left:300px; top:580px; width:500px; height:500px; z-index:3; "><canvas width="500" height="500" style="width:100%;height:100%;"></canvas></div>
+        <div id="el_177910731720843579" class="matrix-container" style="left:1120px; top:580px; width:500px; height:500px; z-index:3; "><canvas width="500" height="500" style="width:100%;height:100%;"></canvas></div>
+        <div id="el_177910734142481839" class="matrix-container" style="left:710px; top:720px; width:500px; height:500px; z-index:3; "><canvas width="500" height="500" style="width:100%;height:100%;"></canvas></div>
+        <div id="el_177910739597660154" class="matrix-container" style="left:0px; top:0px; width:300px; height:300px; z-index:10; "><canvas width="300" height="300" style="width:100%;height:100%;"></canvas></div>
+        <div id="el_177910755244149105" class="matrix-container" style="left:1620px; top:0px; width:300px; height:300px; z-index:10; "><canvas width="300" height="300" style="width:100%;height:100%;"></canvas></div>
+        <img class="thorana-img" src="images/img_67.jpg" style="left:40px; top:40px; width:220px; height:220px; z-index:12; ">
+        <img class="thorana-img" src="images/img_68.jpg" style="left:430px; top:190px; width:240px; height:240px; z-index:13; ">
+        <img class="thorana-img" src="images/img_69.jpg" style="left:168px; top:445px; width:240px; height:240px; z-index:14; ">
+        <img class="thorana-img" src="images/img_70.jpg" style="left:429px; top:723px; width:240px; height:240px; z-index:15; ">
+        <img class="thorana-img" src="images/img_71.jpg" style="left:840px; top:848px; width:240px; height:240px; z-index:16; ">
+        <img class="thorana-img" src="images/img_72.jpg" style="left:1252px; top:713px; width:240px; height:240px; z-index:17; ">
+        <img class="thorana-img" src="images/img_73.jpg" style="left:1512px; top:451px; width:240px; height:240px; z-index:18; ">
+        <img class="thorana-img" src="images/img_74.jpg" style="left:1254px; top:188px; width:240px; height:240px; z-index:19; ">
+        <img class="thorana-img" src="images/img_75.jpg" style="left:1663px; top:39px; width:220px; height:220px; z-index:20; ">
+        <img class="thorana-img" src="images/img_76.png" style="left:0px; top:860px; width:350px; height:350px; z-index:21; ">
+        <img class="thorana-img" src="images/img_77.png" style="left:1560px; top:860px; width:350px; height:350px; z-index:22; ">
+    </div>
+    <div id="audio-panel">
+        <p style="margin: 0 0 10px 0; font-size: 14px;">පසුබිම් නාදය (Background Audio)</p>
+        <audio controls loop>
+            <source src="your_audio_file.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+
+const matrices = [{"id":"el_177910683758155186","type":"matrix","x":760,"y":20,"zIndex":1,"anim":"none","speed":10,"w":400,"h":400,"color":"#ff9800","shape":"circle","text":"සාධු","cols":100,"rows":20,"holeSize":20,"imageSources":["images/img_1.png","images/img_2.png","images/img_3.png","images/img_4.png","images/img_5.png","images/img_6.png","images/img_7.png"],"_internalScroll":145,"_imgIndex":4,"_initX":760,"_initY":20},{"id":"el_177910718272837150","type":"matrix","x":300,"y":60,"zIndex":3,"anim":"blink","speed":5,"w":500,"h":500,"color":"#ff9800","shape":"diamond","text":"සාධු","cols":15,"rows":53,"holeSize":56,"imageSources":["images/img_9.png","images/img_10.png","images/img_11.png","images/img_12.png","images/img_13.png","images/img_14.png","images/img_15.png"],"_internalScroll":193,"_imgIndex":5,"_initX":300,"_initY":60},{"id":"el_177910724767538971","type":"matrix","x":1120,"y":60,"zIndex":3,"anim":"none","speed":10,"w":500,"h":500,"color":"#ff9800","shape":"diamond","text":"සාධු","cols":16,"rows":53,"holeSize":56,"imageSources":["images/img_16.png","images/img_17.png","images/img_18.png","images/img_19.png","images/img_20.png","images/img_21.png","images/img_22.png"],"_internalScroll":455,"_imgIndex":5,"_initX":1120,"_initY":60},{"id":"el_177910727201542539","type":"matrix","x":40,"y":320,"zIndex":3,"anim":"none","speed":6,"w":500,"h":500,"color":"#ff9800","shape":"diamond","text":"සාධු","cols":15,"rows":53,"holeSize":56,"imageSources":["images/img_23.png","images/img_24.png","images/img_25.png","images/img_26.png","images/img_27.png","images/img_28.png","images/img_29.png"],"_internalScroll":114.59999999999962,"_imgIndex":5,"_initX":40,"_initY":320},{"id":"el_177910728860219790","type":"matrix","x":1380,"y":320,"zIndex":3,"anim":"none","speed":2.5,"w":500,"h":500,"color":"#ff9800","shape":"diamond","text":"සාධු","cols":16,"rows":53,"holeSize":56,"imageSources":["images/img_30.png","images/img_31.png","images/img_32.png","images/img_33.png","images/img_34.png","images/img_35.png","images/img_36.png"],"_internalScroll":394.25,"_imgIndex":5,"_initX":1380,"_initY":320},{"id":"el_177910730517898656","type":"matrix","x":300,"y":580,"zIndex":3,"anim":"none","speed":2.6,"w":500,"h":500,"color":"#ff9800","shape":"diamond","text":"සාධු","cols":16,"rows":53,"holeSize":56,"imageSources":["images/img_37.png","images/img_38.png","images/img_39.png","images/img_40.png","images/img_41.png","images/img_42.png","images/img_43.png"],"_internalScroll":491.3999999999884,"_imgIndex":0,"_initX":300,"_initY":580},{"id":"el_177910731720843579","type":"matrix","x":1120,"y":580,"zIndex":3,"anim":"none","speed":4.1,"w":500,"h":500,"color":"#ff9800","shape":"diamond","text":"සාධු","cols":16,"rows":53,"holeSize":56,"imageSources":["images/img_44.png","images/img_45.png","images/img_46.png","images/img_47.png","images/img_48.png","images/img_49.png","images/img_50.png"],"_internalScroll":407.5400000000074,"_imgIndex":6,"_initX":1120,"_initY":580},{"id":"el_177910734142481839","type":"matrix","x":710,"y":720,"zIndex":3,"anim":"none","speed":3.2,"w":500,"h":500,"color":"#ff9800","shape":"diamond","text":"සාධු","cols":16,"rows":53,"holeSize":56,"imageSources":["images/img_51.png","images/img_52.png","images/img_53.png","images/img_54.png","images/img_55.png","images/img_56.png","images/img_57.png"],"_internalScroll":190.07999999999737,"_imgIndex":2,"_initX":710,"_initY":720},{"id":"el_177910739597660154","type":"matrix","x":0,"y":0,"zIndex":10,"anim":"none","speed":10,"w":300,"h":300,"color":"#ff9800","shape":"triangle","text":"සාධු","cols":16,"rows":53,"holeSize":86,"imageSources":["images/img_58.png","images/img_59.png"],"_internalScroll":20,"_imgIndex":1,"_initX":0,"_initY":0},{"id":"el_177910755244149105","type":"matrix","x":1620,"y":0,"zIndex":10,"anim":"none","speed":10,"w":300,"h":300,"color":"#ff9800","shape":"triangle","text":"සාධු","cols":16,"rows":53,"holeSize":86,"imageSources":["images/img_60.png","images/img_61.png","images/img_62.png","images/img_63.png","images/img_64.png","images/img_65.png","images/img_66.png"],"_internalScroll":556,"_imgIndex":4,"_initX":1620,"_initY":0}];
+const imageCache = {};
+let offCanvas = document.createElement('canvas');
+let offCtx = offCanvas.getContext('2d', {alpha: false});
+
+function animateMatrices() {
+    matrices.forEach(el => {
+        let canvasDom = document.getElementById(el.id);
+        if(!canvasDom) return;
+        let cvs = canvasDom.querySelector('canvas') || canvasDom.firstChild;
+        if(!cvs) return;
+        let ctx = cvs.getContext('2d');
+        let w = el.w; let h = el.h;
+        
+        if(cvs.width !== w) cvs.width = w;
+        if(cvs.height !== h) cvs.height = h;
+        
+        let cols = parseInt(el.cols) || 40;
+        let rows = parseInt(el.rows) || 20;
+        
+        if (el._internalScroll === undefined) el._internalScroll = 0;
+        if (el._imgIndex === undefined) el._imgIndex = 0;
+        
+        offCanvas.width = cols * 2 + 100; 
+        offCanvas.height = rows;
+        offCtx.imageSmoothingEnabled = false;
+        offCtx.fillStyle = 'black';
+        offCtx.fillRect(0, 0, offCanvas.width, offCanvas.height);
+        
+        if(el.imageSources && el.imageSources.length > 0) {
+            if (el._imgIndex >= el.imageSources.length) el._imgIndex = 0;
+            
+            let currentSrc = el.imageSources[el._imgIndex];
+            let cacheKey = el.id + '_' + el._imgIndex;
+            
+            if(!imageCache[cacheKey] || imageCache[cacheKey].source !== currentSrc) {
+                let img = new Image();
+                img.src = currentSrc;
+                imageCache[cacheKey] = { source: currentSrc, img: img };
+            }
+            
+            let img = imageCache[cacheKey].img;
+            if(img.complete && img.width > 0) {
+                let aspect = img.width / img.height;
+                let drawW = rows * aspect;
+                let drawH = rows;
+                let totalScrollDist = drawW + cols;
+                
+                el._internalScroll += (el.speed / 10);
+                if (el._internalScroll >= totalScrollDist) {
+                    el._internalScroll = 0;
+                    el._imgIndex = (el._imgIndex + 1) % el.imageSources.length;
+                }
+                
+                offCtx.drawImage(img, cols - el._internalScroll, 0, drawW, drawH);
+            }
+        } else {
+            offCtx.fillStyle = 'white';
+            offCtx.textBaseline = 'middle';
+            offCtx.font = 'bold ' + Math.floor(rows*0.8) + 'px sans-serif';
+            let textWidth = offCtx.measureText(el.text).width;
+            let totalScrollDist = textWidth + cols;
+            
+            el._internalScroll += (el.speed / 10);
+            if (el._internalScroll >= totalScrollDist) {
+                el._internalScroll = 0;
+            }
+            
+            offCtx.fillText(el.text, cols - el._internalScroll, rows/2);
+        }
+        
+        let imgData = offCtx.getImageData(0,0,cols,rows).data;
+        ctx.clearRect(0,0,w,h);
+        
+        let renderLED = (cx, cy, radius, idx) => {
+            let rVal = imgData[idx]; let gVal = imgData[idx+1]; let bVal = imgData[idx+2]; let aVal = imgData[idx+3];
+            let isVisible = aVal > 50 && (rVal > 30 || gVal > 30 || bVal > 30);
+            
+            ctx.beginPath();
+            ctx.arc(cx, cy, radius, 0, Math.PI*2);
+            if(isVisible) {
+                if(el.imageSources && el.imageSources.length > 0) {
+                    ctx.fillStyle = 'rgb(' + rVal + ',' + gVal + ',' + bVal + ')';
+                } else {
+                    ctx.fillStyle = el.color;
+                }
+                ctx.shadowColor = ctx.fillStyle;
+                ctx.shadowBlur = 8;
+            } else {
+                ctx.fillStyle = '#222';
+                ctx.shadowBlur = 0;
+            }
+            ctx.fill();
+        };
+
+        let holeSize = el.holeSize !== undefined ? el.holeSize : 0;
+
+        if (el.shape !== 'circle') {
+            let ledW = w / cols;
+            let ledH = h / rows;
+            let radius = Math.min(ledW, ledH) * 0.4;
+            
+            let halfCols = (cols - 1) / 2;
+            let halfRows = (rows - 1) / 2;
+
+            let pointInPoly = (nx, ny, poly) => {
+                let inside = false;
+                for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+                    let xi = poly[i][0], yi = poly[i][1];
+                    let xj = poly[j][0], yj = poly[j][1];
+                    let intersect = ((yi > ny) != (yj > ny)) && (nx < (xj - xi) * (ny - yi) / (yj - yi) + xi);
+                    if (intersect) inside = !inside;
+                }
+                return inside;
+            };
+            
+            let polygons = {
+                triangle: [[0.5, 0], [1, 1], [0, 1]],
+                diamond: [[0.5, 0], [1, 0.5], [0.5, 1], [0, 0.5]],
+                hexagon: [[0.25, 0], [0.75, 0], [1, 0.5], [0.75, 1], [0.25, 1], [0, 0.5]],
+                star: [[0.5, 0], [0.61, 0.35], [0.98, 0.35], [0.68, 0.57], [0.79, 0.91], [0.5, 0.70], [0.21, 0.91], [0.32, 0.57], [0.02, 0.35], [0.39, 0.35]]
+            };
+
+            for(let r=0; r<rows; r++){
+                for(let c=0; c<cols; c++){
+                    let distC = halfCols > 0 ? Math.abs(c - halfCols) / halfCols : 0;
+                    let distR = halfRows > 0 ? Math.abs(r - halfRows) / halfRows : 0;
+                    
+                    if(holeSize > 0 && distC < (holeSize / 100) && distR < (holeSize / 100)) {
+                        continue;
+                    }
+                    
+                    let nx = (c + 0.5) / cols;
+                    let ny = (r + 0.5) / rows;
+                    
+                    if (el.shape && polygons[el.shape]) {
+                        if (!pointInPoly(nx, ny, polygons[el.shape])) continue;
+                    }
+
+                    let cx = c * ledW + ledW/2;
+                    let cy = r * ledH + ledH/2;
+                    let idx = (r * cols + c) * 4;
+                    renderLED(cx, cy, radius, idx);
+                }
+            }
+        } else if (el.shape === 'circle') {
+            let centerX = w/2;
+            let centerY = h/2;
+            let maxRadius = Math.min(w,h)/2 * 0.95;
+            let innerRadius = maxRadius * (holeSize / 100);
+            
+            let ringGap = (maxRadius - innerRadius) / Math.max(1, rows);
+            let ledRadius = ringGap * 0.4;
+            
+            for(let r=0; r<rows; r++){
+                let currentRadius = innerRadius + r * ringGap;
+                for(let c=0; c<cols; c++){
+                    let angle = (c/cols) * Math.PI*2 + Math.PI/2;
+                    let cx = centerX + Math.cos(angle) * currentRadius;
+                    let cy = centerY + Math.sin(angle) * currentRadius;
+                    let idx = (r * cols + c) * 4;
+                    renderLED(cx, cy, ledRadius, idx);
+                }
+            }
+        }
+    });
+    requestAnimationFrame(animateMatrices);
+}
+if(matrices.length > 0) requestAnimationFrame(animateMatrices);
+
+    </script>
+</body>
+</html>
